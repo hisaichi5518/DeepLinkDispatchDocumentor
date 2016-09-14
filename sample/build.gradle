@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 24
@@ -25,5 +26,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.airbnb:deeplinkdispatch:2.0.1'
+    apt project(':processor')
+
     testCompile 'junit:junit:4.12'
 }
