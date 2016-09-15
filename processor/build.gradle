@@ -1,10 +1,21 @@
 apply plugin: 'java'
+apply plugin: 'com.novoda.bintray-release'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     compile 'com.google.auto.service:auto-service:1.0-rc2'
     compile 'com.airbnb:deeplinkdispatch:2.0.1'
+}
+
+publish {
+    userOrg = 'hisaichi5518'
+    groupId = 'com.github.hisaichi5518'
+    artifactId = 'deeplinkdispatchdocumentor-processor'
+    publishVersion = '0.0.1'
+    website = 'https://github.com/hisaichi5518/DeepLinkDispatchDocumentor'
+    desc = 'Generate a document from "DeepLinkDispatch" library.'
+    licences = ['MIT']
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
