@@ -33,7 +33,7 @@ Add to your app `build.gradle` file:
 ```groovy
 dependencies {
     compile 'com.airbnb:deeplinkdispatch:2.0.1'
-    apt 'com.github.hisaichi5518:deeplinkdispatchdocumentor-processor:0.0.5'
+    apt 'com.github.hisaichi5518:deeplinkdispatchdocumentor-processor:0.0.6'
     apt 'com.airbnb:deeplinkdispatch-processor:2.0.1'
 }
 ```
