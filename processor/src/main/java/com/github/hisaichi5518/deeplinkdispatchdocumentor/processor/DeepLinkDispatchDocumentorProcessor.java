@@ -24,7 +24,7 @@ import javax.lang.model.element.ElementKind;
 import javax.lang.model.element.TypeElement;
 
 @AutoService(Processor.class)
-@SupportedAnnotationTypes({"*"})
+@SupportedAnnotationTypes({"com.airbnb.deeplinkdispatch.DeepLink"})
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class DeepLinkDispatchDocumentorProcessor extends AbstractProcessor {
     private static final String DOCUMENT_FILE = "docs/DeepLinkDispatch.DeepLink.md";
@@ -39,8 +39,6 @@ public class DeepLinkDispatchDocumentorProcessor extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        Documentor documentor = new Documentor(logger);
-
         List<Element> elementList = new ArrayList<>();
         roundEnv.getElementsAnnotatedWith(DeepLink.class)
                 .stream()
@@ -52,6 +50,7 @@ public class DeepLinkDispatchDocumentorProcessor extends AbstractProcessor {
             return false;
         }
 
+        Documentor documentor = new Documentor(logger);
         try {
             documentor.write(new File(DOCUMENT_FILE), new Builder(logger).build(elementList));
         } catch (IOException e) {
@@ -59,6 +58,6 @@ public class DeepLinkDispatchDocumentorProcessor extends AbstractProcessor {
             e.printStackTrace();
         }
 
-        return true;
+        return false;
     }
 }
