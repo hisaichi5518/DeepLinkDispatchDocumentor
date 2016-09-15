@@ -56,6 +56,14 @@ task genReadMe << {
     file("README.md").withWriter{ it << result }
 }
 
+task commitToGit << {
+    println ('git add . && git commit -m "'+  VERSION + '"').execute().waitFor().text
+}
+
+task genTag << {
+    println ('git tag v' + VERSION).execute().waitFor().text
+}
+
 task version << {
     println version()
 }
