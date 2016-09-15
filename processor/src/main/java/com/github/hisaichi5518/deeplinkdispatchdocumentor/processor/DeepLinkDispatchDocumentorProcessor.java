@@ -25,7 +25,7 @@ import javax.lang.model.element.TypeElement;
 
 @AutoService(Processor.class)
 @SupportedAnnotationTypes({"com.airbnb.deeplinkdispatch.*"})
-@SupportedSourceVersion(SourceVersion.RELEASE_7)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class DeepLinkDispatchDocumentorProcessor extends AbstractProcessor {
     private static final String DOCUMENT_FILE = "docs/DeepLinkDispatch.DeepLink.md";
 
