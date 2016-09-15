@@ -12,7 +12,7 @@ publish {
     userOrg = 'hisaichi5518'
     groupId = 'com.github.hisaichi5518'
     artifactId = 'deeplinkdispatchdocumentor-processor'
-    publishVersion = '0.0.3'
+    publishVersion = VERSION
     website = 'https://github.com/hisaichi5518/DeepLinkDispatchDocumentor'
     desc = 'Generate a document from "DeepLinkDispatch" library.'
     licences = ['MIT']
