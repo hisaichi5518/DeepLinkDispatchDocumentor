@@ -1,8 +1,14 @@
 bumpMajor:
-	./gradlew bumpMajor genReadMe commitToGit genTag
+	./gradlew bumpMajor genReadMe
+	git add . && git commit -m "version++"
+	./gradlew genTag
 
 bumpMinor:
-	./gradlew bumpMinor genReadMe commitToGit genTag
+	./gradlew bumpMinor genReadMe
+	git add . && git commit -m "version++"
+	./gradlew genTag
 
 bumpPatch:
-	./gradlew bumpPatch genReadMe commitToGit genTag
+	./gradlew bumpPatch genReadMe
+	git add . && git commit -m "version++"
+	./gradlew genTag
