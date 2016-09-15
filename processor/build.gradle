@@ -14,7 +14,7 @@ publish {
     artifactId = 'deeplinkdispatchdocumentor-processor'
     publishVersion = VERSION
     website = 'https://github.com/hisaichi5518/DeepLinkDispatchDocumentor'
-    desc = 'Generate a document from "DeepLinkDispatch" library.'
+    desc = 'Generate a document from "DeepLinkDispatch.DeepLink" annotation.'
     licences = ['MIT']
 }
 
