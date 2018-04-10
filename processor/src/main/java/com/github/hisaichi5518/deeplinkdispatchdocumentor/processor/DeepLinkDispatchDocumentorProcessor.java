@@ -9,6 +9,7 @@ import com.google.auto.service.AutoService;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
@@ -43,6 +44,7 @@ public class DeepLinkDispatchDocumentorProcessor extends AbstractProcessor {
         roundEnv.getElementsAnnotatedWith(DeepLink.class)
                 .stream()
                 .filter(element -> element.getKind() == ElementKind.CLASS)
+                .sorted(Comparator.comparing(element -> element.getSimpleName().toString()))
                 .forEach(elementList::add);
 
         if (elementList.size() <= 0) {
